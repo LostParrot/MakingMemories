@@ -33,5 +33,6 @@ jobs:
           ls -l
           cd $GITHUB_WORKSPACE/ebook
           cat _config.yml
-          cat test-log.txt >> $GITHUB_STEP_SUMMARY
+          ls
+          cat $LOGFILE >> $GITHUB_STEP_SUMMARY
 
