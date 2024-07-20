@@ -30,6 +30,7 @@ jobs:
           LOGFILE: test-log.txt
         run: |
           exec > >(tee "$LOGFILE") 2>&1
+          set -x
           pwd
           ls -l
           cd $GITHUB_WORKSPACE/ebook
