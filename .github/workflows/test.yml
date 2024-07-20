@@ -25,9 +25,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env: 
+          LOGFILE: test-log.txt
         run: |
+          exec > >(tee "$LOGFILE") 2>&1
           pwd
           ls -l
           cd $GITHUB_WORKSPACE/ebook
           cat _config.yml
+          cat test-log.txt >> $GITHUB_STEP_SUMMARY
 
