@@ -4,6 +4,7 @@ name: CI
 
 # Controls when the workflow will run
 on:
+  push:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -33,6 +34,5 @@ jobs:
           ls -l
           cd $GITHUB_WORKSPACE/ebook
           cat _config.yml
-          ls
-          cat $LOGFILE >> $GITHUB_STEP_SUMMARY
+          cat ../$LOGFILE >> $GITHUB_STEP_SUMMARY
 
