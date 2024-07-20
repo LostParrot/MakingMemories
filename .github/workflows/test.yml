@@ -28,6 +28,7 @@ jobs:
       - name: Run a one-line script
         env: 
           LOGFILE: test-log.md
+          PS4: "\e[0;31m[\u@\h \W]\$ \e[m "
         run: |
           exec > >(tee "$LOGFILE") 2>&1
           set -x
