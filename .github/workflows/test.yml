@@ -27,7 +27,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env: 
-          LOGFILE: test-log.txt
+          LOGFILE: test-log.md
         run: |
           exec > >(tee "$LOGFILE") 2>&1
           set -x
@@ -37,3 +37,9 @@ jobs:
           cat _config.yml
           cat ../$LOGFILE >> $GITHUB_STEP_SUMMARY
 
+      - name: Upload log file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: log-output
+          path: test-log.md
+        
