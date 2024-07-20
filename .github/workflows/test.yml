@@ -28,7 +28,7 @@ jobs:
       - name: Run a one-line script
         env: 
           LOGFILE: test-log.md
-          PS4: '+$${\color{red} $BASH_SOURCE:${BASH_LINENO[0]} ${FUNCNAME[0]:-NOFUNC}() }$$+  '
+          PS4: '+\$\${\color{red} $BASH_SOURCE:${BASH_LINENO[0]} ${FUNCNAME[0]:-NOFUNC}() }\$\$+  '
         run: |
           exec > >(tee "$LOGFILE") 2>&1
           set -x
