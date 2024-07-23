@@ -27,7 +27,9 @@ jobs:
       - name: Test formatting
         run: |
           echo "\$\${\color{red}Welcome \space \color{lightblue}To \space \color{lightgreen}{github}}\$\$" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## :card_file_box: This is an emoji" >> $GITHUB_STEP_SUMMARY
+          echo ":arrow_right: This is another emoji" >> $GITHUB_STEP_SUMMARY
+          echo "> and how does this look?" >> $GITHUB_STEP_SUMMARY
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
