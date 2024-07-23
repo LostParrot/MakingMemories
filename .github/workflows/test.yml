@@ -30,7 +30,7 @@ jobs:
           echo "## :card_file_box: This is an emoji" >> $GITHUB_STEP_SUMMARY
           echo ":arrow_right: This is another emoji" >> $GITHUB_STEP_SUMMARY
           echo "> and how does this look?" >> $GITHUB_STEP_SUMMARY
-          echo "This should be the name of the step: ${{ steps.name }}"  >> $GITHUB_STEP_SUMMARY
+          echo "This should be the name of the step: $STEP_NAME"  >> $GITHUB_STEP_SUMMARY
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
